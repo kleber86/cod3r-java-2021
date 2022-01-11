@@ -11,7 +11,7 @@ public class Console {
 		System.out.println(" dia!");
 		
 		System.out.printf("Mega: %d, %d, %d, %d", 1, 2, 3, 4);
-		System.out.printf("Salario: %.1f%n", 1999.9999);
+		System.out.printf("Salario: %.1f%n", 1999.999);
 		
 		Scanner entrada = new Scanner(System.in);
 		System.out.println("Digite seu nome:");
