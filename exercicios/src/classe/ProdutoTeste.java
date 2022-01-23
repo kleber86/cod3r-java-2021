@@ -15,10 +15,13 @@ public class ProdutoTeste {
 		System.out.println("Produto 1: " + p1.nome);
 		System.out.println("Produto 2: " + p2.nome);
 		
-		double valorComDesconto1 = p1.preco - (1 - p1.desconto);
-		double valorComDesconto2 = p2.preco - (1 - p2.desconto);
+		double valorComDesconto1 = p1.precoComDesconto();
+		double valorComDesconto2 = p2.precoComDesconto(0.1);
 		double mediaValores = (valorComDesconto1 + valorComDesconto2) / 2;
 		
+		
+		System.out.println("Valor Produto 1 R$ : " + valorComDesconto1);
+		System.out.println("Valor Produto 2: R$ " + valorComDesconto2);
 		System.out.println("Media dos valores: R$ " + mediaValores);
 	}
 }
