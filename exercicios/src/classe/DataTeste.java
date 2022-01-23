@@ -12,7 +12,8 @@ public class DataTeste {
 		d2.mes = 01;
 		d2.ano = 2000;
 		
-		System.out.printf("%d/%d/%d\n", d1.dia, d1.mes, d1.ano);
-		System.out.printf("%d-%d-%d", d2.dia, d2.mes, d2.ano);
+		System.out.printf(d1.obterDataFormatada(10, 10, 2010));
+		System.out.println();
+		System.out.println(d2.obterDataFormatada2());
 	}
 }
