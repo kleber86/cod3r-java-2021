@@ -2,12 +2,12 @@ package classe;
 
 public class ProdutoTeste {
 	public static void main(String[] args) {
-		Produto p1 = new Produto("Caneta Azul", 1.99, 0.10);
+		Produto p1 = new Produto("Caneta Azul", 1.99);
+		Produto.desconto = 0.50;
 		
 		var p2 = new Produto();
 		p2.nome = "Caneta Preta";
 		p2.preco = 2.10;
-		p2.desconto = 0.15;
 		
 		System.out.println("Produto 1: " + p1.nome);
 		System.out.println("Produto 2: " + p2.nome);
