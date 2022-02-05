@@ -3,25 +3,28 @@ package oo.composicao.heranca;
 public class Jogo {
 
 	public static void main(String[] args) {
-		Monstro jogador1 = new Monstro();
+		Monstro monstro = new Monstro();
+		monstro.x = 10;
+		monstro.y = 10;
 		
-		jogador1.x = 10;
-		jogador1.y = 10;
+		Heroi heroi = new Heroi();
+		heroi.x = 10;
+		heroi.y = 11;
 		
+		System.out.println("Monstro tem => " + monstro.vida);
+		System.out.println("Heroi tem => " + heroi.vida);
 		
-		Heroi jogador2 = new Heroi();
+		monstro.atacar(heroi);
+		heroi.atacar(monstro);
 		
-		jogador2.x = 10;
-		jogador2.y = 11;
+		monstro.atacar(heroi);
+		heroi.atacar(monstro);
 		
-		System.out.println(jogador1.vida);
-		System.out.println(jogador2.vida);
+		monstro.andar(Direcao.NORTE);
+		monstro.atacar(heroi);
+		heroi.atacar(monstro);
 		
-		jogador1.atacar(jogador2);
-		jogador2.atacar(jogador1);
-		
-
-		System.out.println(jogador1.vida);
-		System.out.println(jogador2.vida);
+		System.out.println("Monstro tem => " +monstro.vida);
+		System.out.println("Heroi tem => " +heroi.vida);
 	}
 }
