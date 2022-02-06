@@ -6,8 +6,12 @@ public class Ferrari extends Carro{
 		super(300);
 	}
 	
-	@Override
-	void acelerar() {
-		velocidadeAtual += 15;
+	Ferrari(int velocidade){
+		super(velocidade);
+		delta = 300;
 	}
+//	@Override
+//	void acelerar() {
+//		velocidadeAtual += 15;
+//	}
 }
