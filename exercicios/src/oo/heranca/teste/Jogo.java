@@ -1,4 +1,4 @@
-package oo.heranca;
+package oo.heranca.teste;
 
 public class Jogo {
 

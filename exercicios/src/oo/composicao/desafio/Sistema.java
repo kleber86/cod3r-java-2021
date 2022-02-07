@@ -18,5 +18,4 @@ public class Sistema {
 		
 		System.out.println(cliente.obterValorTotal());
 	}
-
 }

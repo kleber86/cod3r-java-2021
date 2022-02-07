@@ -1,4 +1,4 @@
-package oo.composicao.desafio;
+package oo.heranca.teste;
 
 public class CarroTeste {
 
