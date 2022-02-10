@@ -14,6 +14,9 @@ public class CalculoTeste2 {
 		System.out.println(somar.executar(1, 1));
 		System.out.println(subtracao.executar(1, 1));
 		System.out.println(multiplicacao.executar(1, 2));
+		
+		System.out.println(somar.legal());
+		System.out.println(Calculo.muitoLegal());
 	}
 
 }
