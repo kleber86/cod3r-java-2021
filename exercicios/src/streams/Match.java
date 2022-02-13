@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Math {
+public class Match {
 
 	public static void main(String[] args) {
 		Aluno a1 = new Aluno("Ana", 7.3);
