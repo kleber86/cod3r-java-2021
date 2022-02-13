@@ -15,11 +15,11 @@ public class Filter {
 		
 		List<Aluno> alunos = Arrays.asList(a1, a2, a3, a4);
 		Predicate<Aluno> aprovados = a -> a.nota >= 7;
-		Function<Aluno, String> nomes = a -> "Parabéns " + a.nome + "!!!";
+		Function<Aluno, String> saudacao = a -> "Parabéns " + a.nome + "!!!";
 		
 		alunos.stream()
 			.filter(aprovados)
-			.map(nomes)
+			.map(saudacao)
 			.forEach(System.out::println);
 	}
 
