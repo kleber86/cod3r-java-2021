@@ -25,9 +25,10 @@ public class Pares<C extends Number, V> {
 		if(chave == null) return null;
 		
 		Optional<Par<C, V>> parOpcional = itens.stream()
-				.filter(p -> chave.equals(p.getChave()))
+				.filter(par -> chave.equals(par.getChave()))
 				.findFirst();
 		
-		return parOpcional.isPresent() ? parOpcional.get().getValor() : null;
+		return parOpcional.isPresent() 
+				? parOpcional.get().getValor() : null;
 	}
 }
