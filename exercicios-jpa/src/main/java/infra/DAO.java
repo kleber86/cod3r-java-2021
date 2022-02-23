@@ -52,6 +52,9 @@ public class DAO<E> {
 		return this.obterTodos(10, 0);
 	}
 	
+	public E obterPorID(Object id) {
+		return em.find(classe, id);
+	}
 	
 	public List<E> obterTodos(int qtde, int descolamento){
 		if(classe == null) {
