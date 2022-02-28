@@ -22,27 +22,27 @@ public class Filme {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String nome;
-	
+
 	private Double nota;
-	
+
 	@ManyToMany(cascade = CascadeType.PERSIST)
 	@JoinTable(
-			name = "atores_filmes",
-			joinColumns = @JoinColumn(name = "filme_id", referencedColumnName = "id"),
-			inverseJoinColumns = @JoinColumn(name = "ator_id", referencedColumnName = "id")
-			)
+		name = "atores_filmes",
+		joinColumns = @JoinColumn(name="filme_id", referencedColumnName = "id"),
+		inverseJoinColumns = @JoinColumn(name="ator_id", referencedColumnName = "id")
+	)
 	private List<Ator> atores;
+
+	public Filme() {
+
+	}
 
 	public Filme(String nome, Double nota) {
 		super();
 		this.nome = nome;
 		this.nota = nota;
-	}
-	
-	public Filme() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Long getId() {
@@ -81,10 +81,11 @@ public class Filme {
 	}
 	
 	public void adicionarAtor(Ator ator) {
-		if(ator != null  && getAtores().contains(ator)) {
+		if(ator != null && !getAtores().contains(ator)) {
 			getAtores().add(ator);
+			
 			if(!ator.getFilmes().contains(this)) {
-				ator.getFilmes().add(this);
+				ator.getFilmes().add(this);				
 			}
 		}
 	}

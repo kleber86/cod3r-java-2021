@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "atores")
 public class Ator {
@@ -18,22 +19,20 @@ public class Ator {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String nome;
-	
+
 	@ManyToMany(mappedBy = "atores", cascade = CascadeType.PERSIST)
-	private List<Filme> filmes = new ArrayList<Filme>();
-	
+	private List<Filme> filmes = new ArrayList<>();
+
 	public Ator() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public Ator(String nome) {
 		super();
 		this.nome = nome;
 	}
-
-
 
 	public Long getId() {
 		return id;
@@ -58,6 +57,5 @@ public class Ator {
 	public void setFilmes(List<Filme> filmes) {
 		this.filmes = filmes;
 	}
-	
 	
 }
