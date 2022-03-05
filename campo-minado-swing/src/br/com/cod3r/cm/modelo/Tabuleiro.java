@@ -26,6 +26,10 @@ public class Tabuleiro implements CampoObservador{
 		sortearMinas();
 	}
 
+	public void paraCada(Consumer<Campo> funcao) {
+		campos.forEach(funcao);
+	}
+	
 	public void registrarObservador(Consumer<ResultadoEvento> observador) {
 		observadores.add(observador);
 	}
@@ -82,6 +86,24 @@ public class Tabuleiro implements CampoObservador{
 		return campos.stream().allMatch(c -> c.objetivoAlcancado());
 	}
 	
+	
+	
+	public int getLinhas() {
+		return linhas;
+	}
+
+	public void setLinhas(int linhas) {
+		this.linhas = linhas;
+	}
+
+	public int getColunas() {
+		return colunas;
+	}
+
+	public void setColunas(int colunas) {
+		this.colunas = colunas;
+	}
+
 	public void reiniciar() {
 		campos.stream().forEach(c -> c.reiniciar());
 		sortearMinas();
