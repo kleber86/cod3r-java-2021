@@ -50,7 +50,7 @@ public class Tabuleiro implements CampoObservador{
 		campos.parallelStream()
 		.filter(c -> c.getLinha() == linha && c.getColuna() == coluna)
 		.findFirst()
-		.ifPresent(c -> c.alternarMArcacao());
+		.ifPresent(c -> c.alternarMarcacao());
 	}
 	
 	private void gerarCampos() {
@@ -112,6 +112,7 @@ public class Tabuleiro implements CampoObservador{
 	@Override
 	public void eventoOcorreu(Campo campo, CampoEvento evento) {
 		if(evento == CampoEvento.EXPLODIR) {
+			mostrarMinas();
 			notificarObservadores(false);
 		}else if(objetivoAlcancado()) {
 			notificarObservadores(true);
