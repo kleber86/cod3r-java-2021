@@ -20,7 +20,10 @@ public class Contador extends Application{
 		
 		
 		Label labelTitulo = new Label("Contador");
+		labelTitulo.getStyleClass().add("titulo");
+		
 		Label labelNumero = new Label("0");
+		labelNumero.getStyleClass().add("numero");
 		
 		Button botaoDecremento = new Button("-");
 		botaoDecremento.setOnAction(e -> {
@@ -41,14 +44,19 @@ public class Contador extends Application{
 		boxBotoes.getChildren().add(botaoDecremento);
 		boxBotoes.getChildren().add(botaoIncremento);
 		
-		VBox boxPrincipal = new VBox();
-		boxPrincipal.setAlignment(Pos.CENTER);
-		boxPrincipal.setSpacing(10);
-		boxPrincipal.getChildren().add(labelTitulo);
-		boxPrincipal.getChildren().add(labelNumero);
-		boxPrincipal.getChildren().add(boxBotoes);
+		VBox boxConteudo = new VBox();
+		boxConteudo.getStyleClass().add("conteudo");
+		boxConteudo.setAlignment(Pos.CENTER);
+		boxConteudo.setSpacing(10);
+		boxConteudo.getChildren().add(labelTitulo);
+		boxConteudo.getChildren().add(labelNumero);
+		boxConteudo.getChildren().add(boxBotoes);
 		
-		Scene cenaPrincipal = new Scene(boxPrincipal, 400, 400);
+		String caminhoCSS = getClass().getResource("/basico/Contador.css").toExternalForm();
+		
+		Scene cenaPrincipal = new Scene(boxConteudo, 400, 400);
+		cenaPrincipal.getStylesheets().add(caminhoCSS);
+		cenaPrincipal.getStylesheets().add("https://fonts.googleapis.com/css2?family=Oswald");
 		
 		primaryStage.setScene(cenaPrincipal);
 		primaryStage.show();
