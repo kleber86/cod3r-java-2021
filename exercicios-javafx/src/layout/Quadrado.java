@@ -11,14 +11,15 @@ private static int i = 0;
 		"#fb750e", "#6657a8", "#f9060e"
 	};
 	
+	
 	public Quadrado() {
-		this(100, 100);
+		this(100);
 	}
 	
-	public Quadrado(int largura, int altura) {
+	public Quadrado(int tamanho) {
 		
-		setWidth(largura);
-		setHeight(altura);
+		setWidth(tamanho);
+		setHeight(tamanho);
 		
 
 		setFill(Color.web(cores[i]));
