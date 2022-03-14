@@ -1,0 +1,8 @@
+// Comando para inserir
+db.estados.insert({nome: "Acre", sigla: "AC", regiao: "Norte"})
+
+// Comanda para realizar uma busca dentro de uma collection
+db.estados.find()
+
+// Comando para realizar uma busca dentro de uma collection mais amigavel.
+db.estados.find().pretty()
