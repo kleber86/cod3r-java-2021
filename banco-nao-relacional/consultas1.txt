@@ -1,0 +1,19 @@
+// Comando para realizar uma busca
+db.estados.find()
+
+// Comando para realizar uma busca mais amigavel
+db.estados.find().pretty()
+
+// Comando para realizar uma unica busca
+db.estados.findOne()
+db.estados.findOne({sigla: "RJ"})
+
+// Comando para realizar uma busca com parametros
+db.estados.find({$or: [{sigla: "RJ"}, {sigla: "AC"}]}).pretty()
+db.estados.find({populacao: {$exists: true}}).pretty()
+db.estados.find().skip(1).limit(2)
+db.estados.find({sigla: "SP"}, {nome: 1, sigla: 1, _id: 0})
+db.estados.find({sigla: "SP"}, {"cidades.nome": 1, _id: 0})
+
+// Comando para informar a quantidade de itens
+db.estados.count()
