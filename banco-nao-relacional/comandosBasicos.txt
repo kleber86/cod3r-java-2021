@@ -1,0 +1,20 @@
+// Comando para limpar o terminal
+cls
+
+// Comando para mostrar os bancos de dados
+show dbs
+
+// Comando para selecionar um banco de dados
+use wm
+
+// Comando para mostrar os bancos de dados
+show dbs
+
+// Comando para a criação de uma collection
+db.createCollection('estados')
+
+// Comando para mostrar as collections
+show collections
+
+// Comando para excluir uma collections
+db.Estados.drop()
