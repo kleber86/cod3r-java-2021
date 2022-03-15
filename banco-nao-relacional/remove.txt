@@ -1,0 +1,8 @@
+// Comando para remover um registro
+db.estados.remove({sigla: "AC"})
+
+// Comando para remover um registro que contenham "populacao" limitado a 1 registro
+db.estados.remove({populacao: {$exists: true}}, 1)
+
+db.estados.update({sigla: "RJ"}, {$set: {populacao: 16720000}})s
+db.estados.remove({populacao: {$lt: 20000000}})
